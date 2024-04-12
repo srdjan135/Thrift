@@ -1,0 +1,432 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --smedja: #cbb06b;
+}
+
+*::selection {
+  background-color: var(--smedja);
+  color: #fff;
+}
+
+* {
+  font-family: "League Spartan", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  transition: all 0.3s linear;
+  scroll-behavior: smooth;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.head {
+  text-align: center;
+  color: var(--smedja);
+  font-size: 4rem;
+  letter-spacing: 1rem;
+  padding: 5rem 0;
+  position: relative;
+  display: inline-block;
+}
+
+.head::before,
+.head::after {
+  content: "";
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+}
+
+.head::before {
+  top: 3rem;
+  left: -3rem;
+  border-left: 0.2rem solid #8b4f11;
+  border-top: 0.2rem solid #8b4f11;
+}
+
+.head::after {
+  bottom: 3.5rem;
+  right: -2rem;
+  border-bottom: 0.2rem solid #8b4f11;
+  border-right: 0.2rem solid #8b4f11;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.header .logo img {
+  width: 15rem;
+  height: 10rem;
+  object-fit: cover;
+}
+
+.header .nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+
+.header .nav ul li {
+  margin: 1.3rem;
+}
+
+.header .nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 2rem;
+}
+
+header .nav ul li .active,
+header .nav ul li a:hover {
+  color: var(--smedja);
+}
+
+.header .fa-bars {
+  color: #fff;
+  font-size: 3rem;
+  display: none;
+  cursor: pointer;
+  /* padding-right: 4rem; */
+}
+
+.pocetna {
+  min-height: 70vh;
+  width: 100vw;
+  background: url(img/1_20240209_091139_0000.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  text-align: center;
+  padding: 0 1rem;
+  position: relative;
+  overflow: hidden !important;
+  z-index: -2;
+}
+
+.pocetna .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.pocetna h1 {
+  font-size: 10rem;
+  color: #fff;
+  letter-spacing: -1rem;
+  padding: 10rem 0;
+  z-index: 999999;
+}
+
+.pocetna p {
+  color: #fff;
+  font-size: 2.5rem;
+  padding: 0 15rem;
+  line-height: 3rem;
+}
+
+.sekcija {
+  min-height: 100vh;
+  text-align: center;
+}
+
+.sekcija:nth-child(even) {
+  background-color: #ddd;
+}
+
+.sekcija:nth-child(even) .head {
+  color: var(--smedja);
+}
+
+.sekcija .row {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10rem 0;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 30rem;
+  height: 30rem;
+
+  border: 1px solid #f1f1f1;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 30rem;
+  height: 30rem;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front img {
+  width: 30rem;
+  height: 30rem;
+  object-fit: cover;
+}
+
+.flip-card-back {
+  background-color: var(--smedja);
+  color: white;
+  transform: rotateY(180deg);
+  text-align: left;
+  padding: 2rem;
+  width: 30rem;
+  height: 30rem;
+}
+
+.flip-card-back h1 {
+  font-size: 3rem;
+  padding-bottom: 2rem;
+}
+
+.flip-card-back p {
+  font-size: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+.flip-card-back p a {
+  text-decoration: none;
+  color: #8b4f11;
+}
+
+.flip-card-back p a:hover{
+  text-decoration: underline;
+}
+
+.contact {
+  text-align: center;
+  background-color: #ddd;
+}
+
+.contact .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-align: left;
+}
+
+.contact .row .contact-info .box {
+  margin: 4rem 2rem;
+}
+
+.contact .row .contact-info .box h3 {
+  font-size: 2rem;
+  color: #333;
+}
+
+.contact .row .contact-info .box h3 i {
+  color: var(--smedja);
+}
+
+.contact .row .contact-info .box p {
+  padding-left: 3rem;
+  font-size: 1.7rem;
+  color: #aaa;
+}
+
+.contact .row .contact-form-container {
+  width: 50%;
+}
+
+.contact .row .contact-form-container h3 {
+  font-size: 4rem;
+  padding-top: 4rem;
+  color: var(--smedja);
+}
+
+.contact .row .contact-form-container form input,
+textarea {
+  outline: none;
+  border: 0.2rem solid var(--smedja);
+  height: 4rem;
+  background: #fff;
+  padding: 0 1rem;
+  margin: 1rem 0;
+  font-size: 1.8rem;
+  width: 49%;
+}
+
+.contact .row .contact-form-container form textarea {
+  width: 100%;
+  padding: 1rem;
+  resize: none;
+  height: 20%;
+}
+
+.contact .row .contact-form-container form input[type="submit"] {
+  color: var(--smedja);
+  border: 0.2rem solid var(--smedja);
+  cursor: pointer;
+  transition: 0.2s linear;
+  width: 20rem;
+}
+
+.contact .row .contact-form-container form input[type="submit"]:hover {
+  color: #fff;
+  background: var(--smedja);
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  background: #000;
+}
+
+.footer .credit {
+  font-size: 2rem;
+  color: #eee;
+}
+
+.footer .credit span {
+  color: var(--smedja);
+}
+
+.footer .icons a {
+  font-size: 2rem;
+  margin: 0 0.5rem;
+  height: 4rem;
+  width: 4rem;
+  line-height: 3.5rem;
+  text-align: center;
+  border-radius: 50%;
+  color: #fff;
+  border: 0.2rem solid #fff;
+  transition: 0.2s linear;
+  text-decoration: none;
+}
+
+.footer .icons a:hover {
+  background-color: var(--smedja);
+}
+
+/* media query */
+
+@media (max-width: 914px) {
+  .flip-card {
+    margin: 3rem 0;
+  }
+}
+
+@media (max-width: 830px) {
+  html {
+    font-size: 50%;
+  }
+
+  .header {
+    padding: 0 3rem;
+  }
+
+  .header .logo img {
+    height: 10rem;
+  }
+
+  .header .nav {
+    position: fixed;
+    top: -120%;
+    left: 0;
+    background: #000;
+    width: 100%;
+    border-radius: 0.5rem;
+  }
+
+  .header .nav ul {
+    flex-flow: column;
+  }
+
+  .header .fa-bars {
+    display: block;
+  }
+
+  .header .fa-times {
+    transform: rotate(180deg);
+  }
+
+  .header .new-nav {
+    top: 10rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact .row {
+    flex-flow: column;
+    align-items: flex-start;
+  }
+
+  .contact .row .contact-form-container {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .footer {
+    flex-flow: column;
+  }
+
+  .footer .credit {
+    text-align: center;
+    padding-bottom: 3rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .pocetna h1 {
+    font-size: 7rem;
+  }
+
+  .pocetna p {
+    font-size: 2rem;
+    padding: 0 5rem;
+  }
+
+  .contact .row .contact-form-container form input {
+    margin: 1rem 0;
+    width: 100%;
+  }
+
+  .contact .row .contact-form-container form input[type="submit"] {
+    width: 100%;
+  }
+}
